@@ -1,0 +1,3777 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OData Service for namespace Microsoft.NAV",
+    "description": "This OData service is located at http://localhost",
+    "version": "1.0.0",
+    "x-ms-generated-by": {
+      "toolName": "Microsoft.OpenApi.OData",
+      "toolVersion": "1.0.9.0"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.businesscentral.dynamics.com/v2.0/dev/api/Seli/SH/v2.0/",
+      "description": "Team Vision Selis APis\""
+    },
+    {
+      "url": "https://api.businesscentral.dynamics.com/v2.0/dev/api/v2.0",
+      "description": "Team Vision DEV Sandbox\""
+    },
+    {
+      "url": "https://api.businesscentral.dynamics.com/v2.0/production/api/v2.0",
+      "description": "Team Vision \"Production\""
+    }
+  ],
+  "paths": {
+    "/apicategoryroutes": {
+      "description": "Provides operations to manage the collection of apicategoryroutes entities.",
+      "get": {
+        "tags": [
+          "apicategoryroutes.apicategoryroutes"
+        ],
+        "summary": "Get entities from apicategoryroutes",
+        "operationId": "apicategoryroutes.apicategoryroutes.ListApicategoryroutes",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "route",
+                  "route desc",
+                  "publisher",
+                  "publisher desc",
+                  "group",
+                  "group desc",
+                  "version",
+                  "version desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "route",
+                  "publisher",
+                  "group",
+                  "version"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.apicategoryroutesCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/apicategoryroutes({route})": {
+      "description": "Provides operations to manage the collection of apicategoryroutes entities.",
+      "get": {
+        "tags": [
+          "apicategoryroutes.apicategoryroutes"
+        ],
+        "summary": "Get entity from apicategoryroutes by key",
+        "operationId": "apicategoryroutes.apicategoryroutes.GetApicategoryroutes",
+        "parameters": [
+          {
+            "name": "route",
+            "in": "path",
+            "description": "The unique identifier of apicategoryroutes",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "apicategoryroutes"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "route",
+                  "publisher",
+                  "group",
+                  "version"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.apicategoryroutes"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/apicategoryroutes/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "apicategoryroutes.apicategoryroutes"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "apicategoryroutes.GetCount-8bb4",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/companies": {
+      "description": "Provides operations to manage the collection of company entities.",
+      "get": {
+        "tags": [
+          "companies.company"
+        ],
+        "summary": "Get entities from companies",
+        "operationId": "companies.company.ListCompany",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "id desc",
+                  "systemVersion",
+                  "systemVersion desc",
+                  "timestamp",
+                  "timestamp desc",
+                  "name",
+                  "name desc",
+                  "displayName",
+                  "displayName desc",
+                  "businessProfileId",
+                  "businessProfileId desc",
+                  "systemCreatedAt",
+                  "systemCreatedAt desc",
+                  "systemCreatedBy",
+                  "systemCreatedBy desc",
+                  "systemModifiedAt",
+                  "systemModifiedAt desc",
+                  "systemModifiedBy",
+                  "systemModifiedBy desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "systemVersion",
+                  "timestamp",
+                  "name",
+                  "displayName",
+                  "businessProfileId",
+                  "systemCreatedAt",
+                  "systemCreatedBy",
+                  "systemModifiedAt",
+                  "systemModifiedBy",
+                  "seliItems"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*",
+                  "seliItems"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.companyCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/companies({id})": {
+      "description": "Provides operations to manage the collection of company entities.",
+      "get": {
+        "tags": [
+          "companies.company"
+        ],
+        "summary": "Get entity from companies by key",
+        "operationId": "companies.company.GetCompany",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of company",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "company"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "systemVersion",
+                  "timestamp",
+                  "name",
+                  "displayName",
+                  "businessProfileId",
+                  "systemCreatedAt",
+                  "systemCreatedBy",
+                  "systemModifiedAt",
+                  "systemModifiedBy",
+                  "seliItems"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*",
+                  "seliItems"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.company"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/companies({id})/seliItems": {
+      "description": "Provides operations to manage the seliItems property of the Microsoft.NAV.company entity.",
+      "get": {
+        "tags": [
+          "companies.seliItem"
+        ],
+        "summary": "Get seliItems from companies",
+        "operationId": "companies.ListSeliItems",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of company",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "company"
+          },
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "id desc",
+                  false,
+                  "no desc",
+                  "description",
+                  "description desc",
+                  "baseUnitOfMeasure",
+                  "baseUnitOfMeasure desc",
+                  "unitPrice",
+                  "unitPrice desc",
+                  "unitCost",
+                  "unitCost desc",
+                  "vendorItemNo",
+                  "vendorItemNo desc",
+                  "grossWeight",
+                  "grossWeight desc",
+                  "netWeight",
+                  "netWeight desc",
+                  "systemCreatedAt",
+                  "systemCreatedAt desc",
+                  "systemModifiedAt",
+                  "systemModifiedAt desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  false,
+                  "description",
+                  "baseUnitOfMeasure",
+                  "unitPrice",
+                  "unitCost",
+                  "vendorItemNo",
+                  "grossWeight",
+                  "netWeight",
+                  "systemCreatedAt",
+                  "systemModifiedAt"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.seliItemCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "post": {
+        "tags": [
+          "companies.seliItem"
+        ],
+        "summary": "Create new navigation property to seliItems for companies",
+        "operationId": "companies.CreateSeliItems",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of company",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "company"
+          }
+        ],
+        "requestBody": {
+          "description": "New navigation property",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created navigation property.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/companies({id})/seliItems({id1})": {
+      "description": "Provides operations to manage the seliItems property of the Microsoft.NAV.company entity.",
+      "get": {
+        "tags": [
+          "companies.seliItem"
+        ],
+        "summary": "Get seliItems from companies",
+        "operationId": "companies.GetSeliItems",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of company",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "company"
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "description": "The unique identifier of seliItem",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "seliItem"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  false,
+                  "description",
+                  "baseUnitOfMeasure",
+                  "unitPrice",
+                  "unitCost",
+                  "vendorItemNo",
+                  "grossWeight",
+                  "netWeight",
+                  "systemCreatedAt",
+                  "systemModifiedAt"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved navigation property",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "patch": {
+        "tags": [
+          "companies.seliItem"
+        ],
+        "summary": "Update the navigation property seliItems in companies",
+        "operationId": "companies.UpdateSeliItems",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of company",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "company"
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "description": "The unique identifier of seliItem",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "seliItem"
+          }
+        ],
+        "requestBody": {
+          "description": "New navigation property values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "delete": {
+        "tags": [
+          "companies.seliItem"
+        ],
+        "summary": "Delete navigation property seliItems for companies",
+        "operationId": "companies.DeleteSeliItems",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of company",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "company"
+          },
+          {
+            "name": "id1",
+            "in": "path",
+            "description": "The unique identifier of seliItem",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "seliItem"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "ETag",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/companies({id})/seliItems/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "companies.seliItem"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "companies.seliItems.GetCount-1d38",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of company",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "company"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/companies/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "companies.company"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "companies.GetCount-5813",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/entityDefinitions": {
+      "description": "Provides operations to manage the collection of entityMetadata entities.",
+      "get": {
+        "tags": [
+          "entityDefinitions.entityMetadata"
+        ],
+        "summary": "Get entities from entityDefinitions",
+        "operationId": "entityDefinitions.entityMetadata.ListEntityMetadata",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "entityName",
+                  "entityName desc",
+                  "entitySetName",
+                  "entitySetName desc",
+                  "entityCaptions",
+                  "entityCaptions desc",
+                  "entitySetCaptions",
+                  "entitySetCaptions desc",
+                  "properties",
+                  "properties desc",
+                  "actions",
+                  "actions desc",
+                  "enumMembers",
+                  "enumMembers desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "entityName",
+                  "entitySetName",
+                  "entityCaptions",
+                  "entitySetCaptions",
+                  "properties",
+                  "actions",
+                  "enumMembers"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.entityMetadataCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "entityDefinitions.entityMetadata"
+        ],
+        "summary": "Add new entity to entityDefinitions",
+        "operationId": "entityDefinitions.entityMetadata.CreateEntityMetadata",
+        "requestBody": {
+          "description": "New entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.entityMetadata"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadata"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/entityDefinitions({entityName})": {
+      "description": "Provides operations to manage the collection of entityMetadata entities.",
+      "get": {
+        "tags": [
+          "entityDefinitions.entityMetadata"
+        ],
+        "summary": "Get entity from entityDefinitions by key",
+        "operationId": "entityDefinitions.entityMetadata.GetEntityMetadata",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "description": "The unique identifier of entityMetadata",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "entityMetadata"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "entityName",
+                  "entitySetName",
+                  "entityCaptions",
+                  "entitySetCaptions",
+                  "properties",
+                  "actions",
+                  "enumMembers"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadata"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "patch": {
+        "tags": [
+          "entityDefinitions.entityMetadata"
+        ],
+        "summary": "Update entity in entityDefinitions",
+        "operationId": "entityDefinitions.entityMetadata.UpdateEntityMetadata",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "description": "The unique identifier of entityMetadata",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "entityMetadata"
+          }
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.entityMetadata"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "delete": {
+        "tags": [
+          "entityDefinitions.entityMetadata"
+        ],
+        "summary": "Delete entity from entityDefinitions",
+        "operationId": "entityDefinitions.entityMetadata.DeleteEntityMetadata",
+        "parameters": [
+          {
+            "name": "entityName",
+            "in": "path",
+            "description": "The unique identifier of entityMetadata",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "entityMetadata"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "ETag",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/entityDefinitions/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "entityDefinitions.entityMetadata"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "entityDefinitions.GetCount-7d89",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/externalbusinesseventdefinitions": {
+      "description": "Provides operations to manage the collection of externalbusinesseventdefinitions entities.",
+      "get": {
+        "tags": [
+          "externalbusinesseventdefinitions.externalbusinesseventdefinitions"
+        ],
+        "summary": "Get entities from externalbusinesseventdefinitions",
+        "operationId": "externalbusinesseventdefinitions.externalbusinesseventdefinitions.ListExternalbusinesseventdefinitions",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "appId",
+                  "appId desc",
+                  "name",
+                  "name desc",
+                  "payload",
+                  "payload desc",
+                  "displayName",
+                  "displayName desc",
+                  "description",
+                  "description desc",
+                  "category",
+                  "category desc",
+                  "appName",
+                  "appName desc",
+                  "appPublisher",
+                  "appPublisher desc",
+                  "appVersion",
+                  "appVersion desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "appId",
+                  "name",
+                  "payload",
+                  "displayName",
+                  "description",
+                  "category",
+                  "appName",
+                  "appPublisher",
+                  "appVersion"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.externalbusinesseventdefinitionsCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/externalbusinesseventdefinitions(appId={appId},name={name})": {
+      "description": "Provides operations to manage the collection of externalbusinesseventdefinitions entities.",
+      "get": {
+        "tags": [
+          "externalbusinesseventdefinitions.externalbusinesseventdefinitions"
+        ],
+        "summary": "Get entity from externalbusinesseventdefinitions by key",
+        "operationId": "externalbusinesseventdefinitions.externalbusinesseventdefinitions.GetExternalbusinesseventdefinitions",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Property in multi-part unique identifier of externalbusinesseventdefinitions",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "externalbusinesseventdefinitions"
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Property in multi-part unique identifier of externalbusinesseventdefinitions",
+            "required": true,
+            "schema": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "externalbusinesseventdefinitions"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "appId",
+                  "name",
+                  "payload",
+                  "displayName",
+                  "description",
+                  "category",
+                  "appName",
+                  "appPublisher",
+                  "appVersion"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.externalbusinesseventdefinitions"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/externalbusinesseventdefinitions/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "externalbusinesseventdefinitions.externalbusinesseventdefinitions"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "externalbusinesseventdefinitions.GetCount-e7e3",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/externaleventsubscriptions": {
+      "description": "Provides operations to manage the collection of externaleventsubscriptions entities.",
+      "get": {
+        "tags": [
+          "externaleventsubscriptions.externaleventsubscriptions"
+        ],
+        "summary": "Get entities from externaleventsubscriptions",
+        "operationId": "externaleventsubscriptions.externaleventsubscriptions.ListExternaleventsubscriptions",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "id desc",
+                  "companyId",
+                  "companyId desc",
+                  "timestamp",
+                  "timestamp desc",
+                  "appId",
+                  "appId desc",
+                  "eventName",
+                  "eventName desc",
+                  "companyName",
+                  "companyName desc",
+                  "userId",
+                  "userId desc",
+                  "notificationUrl",
+                  "notificationUrl desc",
+                  "lastModifiedDateTime",
+                  "lastModifiedDateTime desc",
+                  "clientState",
+                  "clientState desc",
+                  "subscriptionType",
+                  "subscriptionType desc",
+                  "systemCreatedAt",
+                  "systemCreatedAt desc",
+                  "systemCreatedBy",
+                  "systemCreatedBy desc",
+                  "systemModifiedAt",
+                  "systemModifiedAt desc",
+                  "systemModifiedBy",
+                  "systemModifiedBy desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "companyId",
+                  "timestamp",
+                  "appId",
+                  "eventName",
+                  "companyName",
+                  "userId",
+                  "notificationUrl",
+                  "lastModifiedDateTime",
+                  "clientState",
+                  "subscriptionType",
+                  "systemCreatedAt",
+                  "systemCreatedBy",
+                  "systemModifiedAt",
+                  "systemModifiedBy"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.externaleventsubscriptionsCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "externaleventsubscriptions.externaleventsubscriptions"
+        ],
+        "summary": "Add new entity to externaleventsubscriptions",
+        "operationId": "externaleventsubscriptions.externaleventsubscriptions.CreateExternaleventsubscriptions",
+        "requestBody": {
+          "description": "New entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.externaleventsubscriptions"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.externaleventsubscriptions"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/externaleventsubscriptions({id})": {
+      "description": "Provides operations to manage the collection of externaleventsubscriptions entities.",
+      "get": {
+        "tags": [
+          "externaleventsubscriptions.externaleventsubscriptions"
+        ],
+        "summary": "Get entity from externaleventsubscriptions by key",
+        "operationId": "externaleventsubscriptions.externaleventsubscriptions.GetExternaleventsubscriptions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of externaleventsubscriptions",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "externaleventsubscriptions"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "companyId",
+                  "timestamp",
+                  "appId",
+                  "eventName",
+                  "companyName",
+                  "userId",
+                  "notificationUrl",
+                  "lastModifiedDateTime",
+                  "clientState",
+                  "subscriptionType",
+                  "systemCreatedAt",
+                  "systemCreatedBy",
+                  "systemModifiedAt",
+                  "systemModifiedBy"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.externaleventsubscriptions"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "patch": {
+        "tags": [
+          "externaleventsubscriptions.externaleventsubscriptions"
+        ],
+        "summary": "Update entity in externaleventsubscriptions",
+        "operationId": "externaleventsubscriptions.externaleventsubscriptions.UpdateExternaleventsubscriptions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of externaleventsubscriptions",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "externaleventsubscriptions"
+          }
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.externaleventsubscriptions"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "delete": {
+        "tags": [
+          "externaleventsubscriptions.externaleventsubscriptions"
+        ],
+        "summary": "Delete entity from externaleventsubscriptions",
+        "operationId": "externaleventsubscriptions.externaleventsubscriptions.DeleteExternaleventsubscriptions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of externaleventsubscriptions",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "externaleventsubscriptions"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "ETag",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/externaleventsubscriptions/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "externaleventsubscriptions.externaleventsubscriptions"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "externaleventsubscriptions.GetCount-8377",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/seliItems": {
+      "description": "Provides operations to manage the collection of seliItem entities.",
+      "get": {
+        "tags": [
+          "seliItems.seliItem"
+        ],
+        "summary": "Get entities from seliItems",
+        "operationId": "seliItems.seliItem.ListSeliItem",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  "id desc",
+                  false,
+                  "no desc",
+                  "description",
+                  "description desc",
+                  "baseUnitOfMeasure",
+                  "baseUnitOfMeasure desc",
+                  "unitPrice",
+                  "unitPrice desc",
+                  "unitCost",
+                  "unitCost desc",
+                  "vendorItemNo",
+                  "vendorItemNo desc",
+                  "grossWeight",
+                  "grossWeight desc",
+                  "netWeight",
+                  "netWeight desc",
+                  "systemCreatedAt",
+                  "systemCreatedAt desc",
+                  "systemModifiedAt",
+                  "systemModifiedAt desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  false,
+                  "description",
+                  "baseUnitOfMeasure",
+                  "unitPrice",
+                  "unitCost",
+                  "vendorItemNo",
+                  "grossWeight",
+                  "netWeight",
+                  "systemCreatedAt",
+                  "systemModifiedAt"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.seliItemCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "seliItems.seliItem"
+        ],
+        "summary": "Add new entity to seliItems",
+        "operationId": "seliItems.seliItem.CreateSeliItem",
+        "requestBody": {
+          "description": "New entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/seliItems({id})": {
+      "description": "Provides operations to manage the collection of seliItem entities.",
+      "get": {
+        "tags": [
+          "seliItems.seliItem"
+        ],
+        "summary": "Get entity from seliItems by key",
+        "operationId": "seliItems.seliItem.GetSeliItem",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of seliItem",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "seliItem"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "id",
+                  false,
+                  "description",
+                  "baseUnitOfMeasure",
+                  "unitPrice",
+                  "unitCost",
+                  "vendorItemNo",
+                  "grossWeight",
+                  "netWeight",
+                  "systemCreatedAt",
+                  "systemModifiedAt"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "patch": {
+        "tags": [
+          "seliItems.seliItem"
+        ],
+        "summary": "Update entity in seliItems",
+        "operationId": "seliItems.seliItem.UpdateSeliItem",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of seliItem",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "seliItem"
+          }
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "delete": {
+        "tags": [
+          "seliItems.seliItem"
+        ],
+        "summary": "Delete entity from seliItems",
+        "operationId": "seliItems.seliItem.DeleteSeliItem",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of seliItem",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "format": "uuid"
+            },
+            "x-ms-docs-key-type": "seliItem"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "ETag",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/seliItems/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "seliItems.seliItem"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "seliItems.GetCount-2c59",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/subscriptions": {
+      "description": "Provides operations to manage the collection of subscriptions entities.",
+      "get": {
+        "tags": [
+          "subscriptions.subscriptions"
+        ],
+        "summary": "Get entities from subscriptions",
+        "operationId": "subscriptions.subscriptions.ListSubscriptions",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "subscriptionId",
+                  "subscriptionId desc",
+                  "notificationUrl",
+                  "notificationUrl desc",
+                  "resource",
+                  "resource desc",
+                  "timestamp",
+                  "timestamp desc",
+                  "userId",
+                  "userId desc",
+                  "lastModifiedDateTime",
+                  "lastModifiedDateTime desc",
+                  "clientState",
+                  "clientState desc",
+                  "expirationDateTime",
+                  "expirationDateTime desc",
+                  "systemCreatedAt",
+                  "systemCreatedAt desc",
+                  "systemCreatedBy",
+                  "systemCreatedBy desc",
+                  "systemModifiedAt",
+                  "systemModifiedAt desc",
+                  "systemModifiedBy",
+                  "systemModifiedBy desc"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "subscriptionId",
+                  "notificationUrl",
+                  "resource",
+                  "timestamp",
+                  "userId",
+                  "lastModifiedDateTime",
+                  "clientState",
+                  "expirationDateTime",
+                  "systemCreatedAt",
+                  "systemCreatedBy",
+                  "systemModifiedAt",
+                  "systemModifiedBy"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Microsoft.NAV.subscriptionsCollectionResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "subscriptions.subscriptions"
+        ],
+        "summary": "Add new entity to subscriptions",
+        "operationId": "subscriptions.subscriptions.CreateSubscriptions",
+        "requestBody": {
+          "description": "New entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.subscriptions"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.subscriptions"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/subscriptions({subscriptionId})": {
+      "description": "Provides operations to manage the collection of subscriptions entities.",
+      "get": {
+        "tags": [
+          "subscriptions.subscriptions"
+        ],
+        "summary": "Get entity from subscriptions by key",
+        "operationId": "subscriptions.subscriptions.GetSubscriptions",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The unique identifier of subscriptions",
+            "required": true,
+            "schema": {
+              "maxLength": 150,
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "subscriptions"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "subscriptionId",
+                  "notificationUrl",
+                  "resource",
+                  "timestamp",
+                  "userId",
+                  "lastModifiedDateTime",
+                  "clientState",
+                  "expirationDateTime",
+                  "systemCreatedAt",
+                  "systemCreatedBy",
+                  "systemModifiedAt",
+                  "systemModifiedBy"
+                ],
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expand related entities",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "enum": [
+                  "*"
+                ],
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.NAV.subscriptions"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "patch": {
+        "tags": [
+          "subscriptions.subscriptions"
+        ],
+        "summary": "Update entity in subscriptions",
+        "operationId": "subscriptions.subscriptions.UpdateSubscriptions",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The unique identifier of subscriptions",
+            "required": true,
+            "schema": {
+              "maxLength": 150,
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "subscriptions"
+          }
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Microsoft.NAV.subscriptions"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      },
+      "delete": {
+        "tags": [
+          "subscriptions.subscriptions"
+        ],
+        "summary": "Delete entity from subscriptions",
+        "operationId": "subscriptions.subscriptions.DeleteSubscriptions",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The unique identifier of subscriptions",
+            "required": true,
+            "schema": {
+              "maxLength": 150,
+              "type": "string"
+            },
+            "x-ms-docs-key-type": "subscriptions"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "description": "ETag",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        },
+        "x-ms-docs-operation-type": "operation"
+      }
+    },
+    "/subscriptions/$count": {
+      "description": "Provides operations to count the resources in the collection.",
+      "get": {
+        "tags": [
+          "subscriptions.subscriptions"
+        ],
+        "summary": "Get the number of the resource",
+        "operationId": "subscriptions.GetCount-8aee",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/search"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ODataCountResponse"
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "oAuth": {
+        "type": "oauth2",
+        "description": "This API uses OAuth 2 with the implicit grant flow. [More info](https://api.example.com/docs/auth)",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://login.windows.net/common/oauth2/authorize?resource=https://api.businesscentral.dynamics.com",
+            "scopes": {
+              "Financials.ReadWrite.All": "financials.read.write.all"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Microsoft.NAV.entityMetadata": {
+        "title": "entityMetadata",
+        "type": "object",
+        "properties": {
+          "entityName": {
+            "type": "string"
+          },
+          "entitySetName": {
+            "type": "string",
+            "nullable": true
+          },
+          "entityCaptions": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataLabel"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          },
+          "entitySetCaptions": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataLabel"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataField"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataAction"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          },
+          "enumMembers": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataEnumMember"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          }
+        },
+        "example": {
+          "entityName": "string (identifier)",
+          "entitySetName": "string",
+          "entityCaptions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ],
+          "entitySetCaptions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ],
+          "properties": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataField"
+            }
+          ],
+          "actions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataAction"
+            }
+          ],
+          "enumMembers": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataEnumMember"
+            }
+          ]
+        }
+      },
+      "Microsoft.NAV.entityMetadataLabel": {
+        "title": "entityMetadataLabel",
+        "type": "object",
+        "properties": {
+          "languageCode": {
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer",
+            "format": "int32"
+          },
+          "caption": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "languageCode": "integer",
+          "caption": "string"
+        }
+      },
+      "Microsoft.NAV.entityMetadataField": {
+        "title": "entityMetadataField",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "captions": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataLabel"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          }
+        },
+        "example": {
+          "name": "string",
+          "captions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ]
+        }
+      },
+      "Microsoft.NAV.entityMetadataAction": {
+        "title": "entityMetadataAction",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "captions": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataLabel"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          }
+        },
+        "example": {
+          "name": "string",
+          "captions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ]
+        }
+      },
+      "Microsoft.NAV.entityMetadataEnumMember": {
+        "title": "entityMetadataEnumMember",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer",
+            "format": "int32"
+          },
+          "captions": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataLabel"
+                },
+                {
+                  "type": "object",
+                  "nullable": true
+                }
+              ]
+            }
+          }
+        },
+        "example": {
+          "name": "string",
+          "value": "integer",
+          "captions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ]
+        }
+      },
+      "Microsoft.NAV.company": {
+        "title": "company",
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid"
+          },
+          "systemVersion": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 30,
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "maxLength": 250,
+            "type": "string",
+            "nullable": true
+          },
+          "businessProfileId": {
+            "maxLength": 250,
+            "type": "string",
+            "nullable": true
+          },
+          "systemCreatedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemCreatedBy": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "systemModifiedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemModifiedBy": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "seliItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+            },
+            "x-ms-navigationProperty": true
+          }
+        },
+        "example": {
+          "id": "string (identifier)",
+          "systemVersion": "string",
+          "timestamp": "integer",
+          "name": "string",
+          "displayName": "string",
+          "businessProfileId": "string",
+          "systemCreatedAt": "string (timestamp)",
+          "systemCreatedBy": "string",
+          "systemModifiedAt": "string (timestamp)",
+          "systemModifiedBy": "string",
+          "seliItems": [
+            {
+              "@odata.type": "Microsoft.NAV.seliItem"
+            }
+          ]
+        }
+      },
+      "Microsoft.NAV.subscriptions": {
+        "title": "subscriptions",
+        "type": "object",
+        "properties": {
+          "subscriptionId": {
+            "maxLength": 150,
+            "type": "string"
+          },
+          "notificationUrl": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "userId": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "lastModifiedDateTime": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "clientState": {
+            "maxLength": 2048,
+            "type": "string",
+            "nullable": true
+          },
+          "expirationDateTime": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemCreatedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemCreatedBy": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "systemModifiedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemModifiedBy": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "example": {
+          "subscriptionId": "string (identifier)",
+          "notificationUrl": "string",
+          "resource": "string",
+          "timestamp": "integer",
+          "userId": "string",
+          "lastModifiedDateTime": "string (timestamp)",
+          "clientState": "string",
+          "expirationDateTime": "string (timestamp)",
+          "systemCreatedAt": "string (timestamp)",
+          "systemCreatedBy": "string",
+          "systemModifiedAt": "string (timestamp)",
+          "systemModifiedBy": "string"
+        }
+      },
+      "Microsoft.NAV.externaleventsubscriptions": {
+        "title": "externaleventsubscriptions",
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "appId": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "eventName": {
+            "maxLength": 80,
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "maxLength": 30,
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "notificationUrl": {
+            "maxLength": 2048,
+            "type": "string",
+            "nullable": true
+          },
+          "lastModifiedDateTime": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "clientState": {
+            "maxLength": 2048,
+            "type": "string",
+            "nullable": true
+          },
+          "subscriptionType": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemCreatedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemCreatedBy": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "systemModifiedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemModifiedBy": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "example": {
+          "id": "string (identifier)",
+          "companyId": "string",
+          "timestamp": "integer",
+          "appId": "string",
+          "eventName": "string",
+          "companyName": "string",
+          "userId": "string",
+          "notificationUrl": "string",
+          "lastModifiedDateTime": "string (timestamp)",
+          "clientState": "string",
+          "subscriptionType": "string",
+          "systemCreatedAt": "string (timestamp)",
+          "systemCreatedBy": "string",
+          "systemModifiedAt": "string (timestamp)",
+          "systemModifiedBy": "string"
+        }
+      },
+      "Microsoft.NAV.externalbusinesseventdefinitions": {
+        "title": "externalbusinesseventdefinitions",
+        "type": "object",
+        "properties": {
+          "appId": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "maxLength": 80,
+            "type": "string"
+          },
+          "payload": {
+            "type": "string"
+          },
+          "displayName": {
+            "maxLength": 250,
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 1024,
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "maxLength": 250,
+            "type": "string",
+            "nullable": true
+          },
+          "appName": {
+            "maxLength": 250,
+            "type": "string",
+            "nullable": true
+          },
+          "appPublisher": {
+            "maxLength": 250,
+            "type": "string",
+            "nullable": true
+          },
+          "appVersion": {
+            "maxLength": 43,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "example": {
+          "appId": "string (identifier)",
+          "name": "string (identifier)",
+          "payload": "string",
+          "displayName": "string",
+          "description": "string",
+          "category": "string",
+          "appName": "string",
+          "appPublisher": "string",
+          "appVersion": "string"
+        }
+      },
+      "Microsoft.NAV.apicategoryroutes": {
+        "title": "apicategoryroutes",
+        "type": "object",
+        "properties": {
+          "route": {
+            "type": "string"
+          },
+          "publisher": {
+            "maxLength": 40,
+            "type": "string",
+            "nullable": true
+          },
+          "group": {
+            "maxLength": 40,
+            "type": "string",
+            "nullable": true
+          },
+          "version": {
+            "maxLength": 10,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "example": {
+          "route": "string (identifier)",
+          "publisher": "string",
+          "group": "string",
+          "version": "string"
+        }
+      },
+      "Microsoft.NAV.seliItem": {
+        "title": "seliItem",
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+            "type": "string",
+            "format": "uuid"
+          },
+          "false": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "baseUnitOfMeasure": {
+            "maxLength": 10,
+            "type": "string",
+            "nullable": true
+          },
+          "unitPrice": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "unitCost": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "vendorItemNo": {
+            "maxLength": 50,
+            "type": "string",
+            "nullable": true
+          },
+          "grossWeight": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "netWeight": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "systemCreatedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "systemModifiedAt": {
+            "pattern": "^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "example": {
+          "id": "string (identifier)",
+          "false": "string",
+          "description": "string",
+          "baseUnitOfMeasure": "string",
+          "unitPrice": "number",
+          "unitCost": "number",
+          "vendorItemNo": "string",
+          "grossWeight": "number",
+          "netWeight": "number",
+          "systemCreatedAt": "string (timestamp)",
+          "systemModifiedAt": "string (timestamp)"
+        }
+      },
+      "Microsoft.NAV.ODataErrors.ODataError": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/Microsoft.NAV.ODataErrors.MainError"
+          }
+        }
+      },
+      "Microsoft.NAV.ODataErrors.MainError": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "x-ms-primary-error-message": true
+          },
+          "target": {
+            "type": "string",
+            "nullable": true
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.ODataErrors.ErrorDetails"
+            }
+          },
+          "innerError": {
+            "$ref": "#/components/schemas/Microsoft.NAV.ODataErrors.InnerError"
+          }
+        }
+      },
+      "Microsoft.NAV.ODataErrors.ErrorDetails": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Microsoft.NAV.ODataErrors.InnerError": {
+        "type": "object",
+        "description": "The structure of this object is service-specific"
+      },
+      "ODataCountResponse": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "Microsoft.NAV.entityMetadataCollectionResponse": {
+        "title": "Collection of entityMetadata",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadata"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.companyCollectionResponse": {
+        "title": "Collection of company",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.company"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.subscriptionsCollectionResponse": {
+        "title": "Collection of subscriptions",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.subscriptions"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.externaleventsubscriptionsCollectionResponse": {
+        "title": "Collection of externaleventsubscriptions",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.externaleventsubscriptions"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.externalbusinesseventdefinitionsCollectionResponse": {
+        "title": "Collection of externalbusinesseventdefinitions",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.externalbusinesseventdefinitions"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.apicategoryroutesCollectionResponse": {
+        "title": "Collection of apicategoryroutes",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.apicategoryroutes"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.seliItemCollectionResponse": {
+        "title": "Collection of seliItem",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.seliItem"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataLabelCollectionResponse": {
+        "title": "Collection of Microsoft.NAV.entityMetadataLabel",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataLabel"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataFieldCollectionResponse": {
+        "title": "Collection of Microsoft.NAV.entityMetadataField",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataField"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataActionCollectionResponse": {
+        "title": "Collection of Microsoft.NAV.entityMetadataAction",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataAction"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataEnumMemberCollectionResponse": {
+        "title": "Collection of Microsoft.NAV.entityMetadataEnumMember",
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataEnumMember"
+            }
+          }
+        }
+      },
+      "ReferenceUpdate": {
+        "type": "object",
+        "properties": {
+          "@odata.id": {
+            "type": "string"
+          },
+          "@odata.type": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ReferenceCreate": {
+        "type": "object",
+        "properties": {
+          "@odata.id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {
+          "type": "object"
+        }
+      },
+      "ReferenceNumeric": {
+        "enum": [
+          "-INF",
+          "INF",
+          "NaN"
+        ]
+      }
+    },
+    "responses": {
+      "error": {
+        "description": "error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.ODataErrors.ODataError"
+            }
+          }
+        }
+      },
+      "ODataCountResponse": {
+        "description": "The count of the resource",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "$ref": "#/components/schemas/ODataCountResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.companyCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.companyCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.subscriptionsCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.subscriptionsCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.externaleventsubscriptionsCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.externaleventsubscriptionsCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.externalbusinesseventdefinitionsCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.externalbusinesseventdefinitionsCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.apicategoryroutesCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.apicategoryroutesCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.seliItemCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.seliItemCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataLabelCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataLabelCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataFieldCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataFieldCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataActionCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataActionCollectionResponse"
+            }
+          }
+        }
+      },
+      "Microsoft.NAV.entityMetadataEnumMemberCollectionResponse": {
+        "description": "Retrieved collection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Microsoft.NAV.entityMetadataEnumMemberCollectionResponse"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Show only the first n items",
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "example": 50
+      },
+      "skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Skip the first n items",
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "count": {
+        "name": "$count",
+        "in": "query",
+        "description": "Include count of items",
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "filter": {
+        "name": "$filter",
+        "in": "query",
+        "description": "Filter items by property values",
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "search": {
+        "name": "$search",
+        "in": "query",
+        "description": "Search items by search phrases",
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "examples": {
+      "Microsoft.NAV.entityMetadata": {
+        "value": {
+          "actions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataAction"
+            }
+          ],
+          "entityCaptions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ],
+          "entityName": "String (identifier)",
+          "entitySetCaptions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ],
+          "entitySetName": "String",
+          "enumMembers": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataEnumMember"
+            }
+          ],
+          "properties": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataField"
+            }
+          ]
+        }
+      },
+      "Microsoft.NAV.entityMetadataLabel": {
+        "value": {
+          "caption": "String",
+          "languageCode": 0
+        }
+      },
+      "Microsoft.NAV.entityMetadataField": {
+        "value": {
+          "captions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ],
+          "name": "String"
+        }
+      },
+      "Microsoft.NAV.entityMetadataAction": {
+        "value": {
+          "captions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ],
+          "name": "String"
+        }
+      },
+      "Microsoft.NAV.entityMetadataEnumMember": {
+        "value": {
+          "captions": [
+            {
+              "@odata.type": "Microsoft.NAV.entityMetadataLabel"
+            }
+          ],
+          "name": "String",
+          "value": 0
+        }
+      },
+      "Microsoft.NAV.company": {
+        "value": {
+          "businessProfileId": "String",
+          "displayName": "String",
+          "id": "00000000-0000-0000-0000-000000000000 (identifier)",
+          "name": "String",
+          "seliItems": [
+            {
+              "@odata.type": "Microsoft.NAV.seliItem"
+            }
+          ],
+          "systemCreatedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "systemCreatedBy": "00000000-0000-0000-0000-000000000000",
+          "systemModifiedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "systemModifiedBy": "00000000-0000-0000-0000-000000000000",
+          "systemVersion": "String",
+          "timestamp": 0
+        }
+      },
+      "Microsoft.NAV.subscriptions": {
+        "value": {
+          "clientState": "String",
+          "expirationDateTime": "0001-01-01T00:00:00.0000000+00:00",
+          "lastModifiedDateTime": "0001-01-01T00:00:00.0000000+00:00",
+          "notificationUrl": "String",
+          "resource": "String",
+          "subscriptionId": "String (identifier)",
+          "systemCreatedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "systemCreatedBy": "00000000-0000-0000-0000-000000000000",
+          "systemModifiedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "systemModifiedBy": "00000000-0000-0000-0000-000000000000",
+          "timestamp": 0,
+          "userId": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      "Microsoft.NAV.externaleventsubscriptions": {
+        "value": {
+          "appId": "00000000-0000-0000-0000-000000000000",
+          "clientState": "String",
+          "companyId": "00000000-0000-0000-0000-000000000000",
+          "companyName": "String",
+          "eventName": "String",
+          "id": "00000000-0000-0000-0000-000000000000 (identifier)",
+          "lastModifiedDateTime": "0001-01-01T00:00:00.0000000+00:00",
+          "notificationUrl": "String",
+          "subscriptionType": "String",
+          "systemCreatedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "systemCreatedBy": "00000000-0000-0000-0000-000000000000",
+          "systemModifiedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "systemModifiedBy": "00000000-0000-0000-0000-000000000000",
+          "timestamp": 0,
+          "userId": "00000000-0000-0000-0000-000000000000"
+        }
+      },
+      "Microsoft.NAV.externalbusinesseventdefinitions": {
+        "value": {
+          "appId": "00000000-0000-0000-0000-000000000000 (identifier)",
+          "appName": "String",
+          "appPublisher": "String",
+          "appVersion": "String",
+          "category": "String",
+          "description": "String",
+          "displayName": "String",
+          "name": "String (identifier)",
+          "payload": "String"
+        }
+      },
+      "Microsoft.NAV.apicategoryroutes": {
+        "value": {
+          "group": "String",
+          "publisher": "String",
+          "route": "String (identifier)",
+          "version": "String"
+        }
+      },
+      "Microsoft.NAV.seliItem": {
+        "value": {
+          "baseUnitOfMeasure": "String",
+          "description": "String",
+          "grossWeight": 0,
+          "id": "00000000-0000-0000-0000-000000000000 (identifier)",
+          "netWeight": 0,
+          "false": "String",
+          "systemCreatedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "systemModifiedAt": "0001-01-01T00:00:00.0000000+00:00",
+          "unitCost": 0,
+          "unitPrice": 0,
+          "vendorItemNo": "String"
+        }
+      }
+    },
+    "requestBodies": {
+      "refPostBody": {
+        "description": "New navigation property ref value",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReferenceCreate"
+            }
+          }
+        },
+        "required": true
+      },
+      "refPutBody": {
+        "description": "New navigation property ref values",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReferenceUpdate"
+            }
+          }
+        },
+        "required": true
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "apicategoryroutes.apicategoryroutes",
+      "x-ms-docs-toc-type": "page"
+    },
+    {
+      "name": "companies.company",
+      "x-ms-docs-toc-type": "page"
+    },
+    {
+      "name": "companies.seliItem",
+      "x-ms-docs-toc-type": "page"
+    },
+    {
+      "name": "entityDefinitions.entityMetadata",
+      "x-ms-docs-toc-type": "page"
+    },
+    {
+      "name": "externalbusinesseventdefinitions.externalbusinesseventdefinitions",
+      "x-ms-docs-toc-type": "page"
+    },
+    {
+      "name": "externaleventsubscriptions.externaleventsubscriptions",
+      "x-ms-docs-toc-type": "page"
+    },
+    {
+      "name": "seliItems.seliItem",
+      "x-ms-docs-toc-type": "page"
+    },
+    {
+      "name": "subscriptions.subscriptions",
+      "x-ms-docs-toc-type": "page"
+    }
+  ],
+  "security": [
+    {
+      "oAuth": [
+        "Financials.ReadWrite.All"
+      ]
+    }
+  ]
+}
